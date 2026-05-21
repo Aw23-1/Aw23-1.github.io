@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>我的GitHub Pages博客 | 实验二作品</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 30px 20px;
+        }
+
+        .blog-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* 博客卡片 */
+        .blog-post {
+            background-color: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        /* 头部 */
+        .blog-header {
+            text-align: center;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .blog-header h1 {
+            font-size: 2.2em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .blog-header .date {
+            color: #888;
+            font-size: 0.9em;
+        }
+
+        /* 章节标题 */
+        h2 {
+            color: #667eea;
+            margin: 30px 0 15px 0;
+            padding-left: 10px;
+            border-left: 5px solid #667eea;
+        }
+
+        h3 {
+            color: #555;
+            margin: 20px 0 10px 0;
+        }
+
+        /* 图片样式 */
+        .image-section {
+            margin: 25px 0;
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .image-caption {
+            margin-top: 12px;
+            font-size: 0.85em;
+            color: #666;
+            background: #e9ecef;
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-family: monospace;
+        }
+
+        /* 路径说明卡片 */
+        .path-info {
+            background: #e7f3ff;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-size: 0.9em;
+        }
+
+        .path-info code {
+            background: #fff;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #d63384;
+        }
+
+        hr {
+            margin: 30px 0;
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, #ccc, transparent);
+        }
+
+        /* 页脚 */
+        .footer {
+            text-align: center;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.85em;
+            margin-top: 20px;
+        }
+
+        /* 评论区样式微调 */
+        .giscus {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px dashed #ddd;
+        }
+
+        @media (max-width: 600px) {
+            .blog-post {
+                padding: 20px;
+            }
+            .blog-header h1 {
+                font-size: 1.6em;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="blog-container">
+    <div class="blog-post">
+        <!-- 博客头部 -->
+        <div class="blog-header">
+            <h1>📝 欢迎来到我的个人博客</h1>
+            <div class="date">2026年5月21日 | 实验二作品</div>
+        </div>
+
+        <!-- 博客正文 -->
+        <p style="font-size:1.1em; line-height:1.6;">
+            大家好！这是我的第一个通过 <strong>GitHub Pages</strong> 托管的静态博客。
+            本页面展示了<strong>绝对路径</strong>和<strong>相对路径</strong>两种图片引用方式，
+            并已集成评论区功能（基于Giscus）。
+        </p>
+
+        <!-- ========= 绝对路径图片示例 ========= -->
+        <h2>🌐 一、绝对路径图片</h2>
+        <div class="image-section">
+            <!-- 绝对路径：直接引用网络上的图片URL -->
+            <img src="https://picsum.photos/id/104/800/400" 
+                 alt="绝对路径图片示例 - 风景照">
+            <div class="image-caption">
+                📍 绝对路径：https://picsum.photos/id/104/800/400
+            </div>
+        </div>
+        <div class="path-info">
+            💡 <strong>绝对路径解释：</strong><br>
+            以 <code>https://</code> 或 <code>http://</code> 开头的完整URL，或者以根目录 <code>/</code> 开头的路径。
+            这里使用的是网络图片服务 <code>picsum.photos</code> 的完整链接，无论页面在哪个服务器都能正常加载。
+        </div>
+
+        <!-- ========= 相对路径图片示例 ========= -->
+        <h2>📁 二、相对路径图片</h2>
+        <div class="image-section">
+            <!-- 相对路径：指向本地的 image/local.jpg -->
+            <img src="image/local.jpg" 
+                     alt="相对路径图片示例"
+                     onerror="this.onerror=null; this.src='https://picsum.photos/id/20/800/400'; this.alt='图片加载失败，已替换为默认图'">
+            <div class="image-caption">
+                📍 相对路径：<code>image/local.jpg</code>
+            </div>
+        </div>
+        <div class="path-info">
+            💡 <strong>相对路径解释：</strong><br>
+            相对于当前 <code>index.html</code> 文件所在目录。<br>
+            当前文件位置：<code>/index.html</code> → 图片位置：<code>/image/local.jpg</code><br>
+            ✅ 部署后，仓库里必须有 <code>image/local.jpg</code> 这张图片才会正常显示。
+        </div>
+
+        <h2>💬 三、关于评论区</h2>
+        <p>
+            由于 GitHub Pages 只能托管静态文件，无法直接运行后端代码。<br>
+            本页面借助 <strong>Giscus</strong> 实现评论功能，所有评论都会存储在你的 GitHub 仓库的 Discussions（讨论区）中，完全免费且无广告。
+        </p>
+
+        <hr>
+
+        <!-- ========= 评论功能区（Giscus） ========= -->
+        <div class="giscus">
+            <h3>✨ 评论区</h3>
+            <p style="color:#666; font-size:0.9rem;">欢迎在下方留言交流～（需要登录GitHub账号）</p>
+            
+            <!-- 以下是Giscus嵌入代码，需要替换为自己的配置 -->
+            <script src="https://giscus.app/client.js"
+                    data-repo="你的用户名/你的用户名.github.io"
+                    data-repo-id="你的仓库ID"
+                    data-category="Announcements"
+                    data-category-id="你的分类ID"
+                    data-mapping="pathname"
+                    data-strict="0"
+                    data-reactions-enabled="1"
+                    data-emit-metadata="0"
+                    data-input-position="top"
+                    data-theme="light"
+                    data-lang="zh-CN"
+                    crossorigin="anonymous"
+                    async>
+            </script>
+            <noscript>⚠️ 请启用 JavaScript 来查看评论区。</noscript>
+        </div>
+    </div>
+    <div class="footer">
+        © 2026 我的GitHub博客 | 使用 GitHub Pages 托管
+    </div>
+</div>
+</body>
+</html>
